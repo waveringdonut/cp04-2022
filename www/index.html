@@ -150,6 +150,9 @@
 
 
     // 変数宣言
+    var active = false;
+    var startTime = 0;
+    var period = 0;
 
 
     
@@ -158,6 +161,7 @@
         $('#btnA').prop('disabled', false);
         $('#btnB').prop('disabled', false);
         $('#btnC').prop('disabled', false);
+        
         
     }
 
@@ -173,10 +177,6 @@
         var audio = new Audio();
         audio.src = "pin.wav";
         audio.play();
-
-        var active = false;
-        var startTime = 0;
-        var period = 0;
 
 
  };
