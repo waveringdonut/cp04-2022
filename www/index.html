@@ -180,6 +180,8 @@
         audio.src = "pin.wav";
         audio.play();
 
+        
+
 
  };
         
@@ -192,8 +194,6 @@
         startTime = new Date(); 
         $("#btnA").prop("disabled", true);
 
-        
-        
     }
 
     // ButtonBがクリックされた時の処理
@@ -201,7 +201,6 @@
         active = false;
         $("#btnA").prop("disabled", false);
 
-        
     }
 
     // ButtonCがクリックされた時の処理
@@ -220,24 +219,34 @@
         if (active) {
             var time = parseInt( (new Date() - startTime)/1000 );
             var rest = period - time;
-            $("#time").html("経過時間： " + time);
-            $("#remain").html("残り時間： " + rest);
-            analog(rest);
 
+            var m = parseInt(rest/60); 
+            var s = parseInt(rest - m*60);
+
+            var mstr = "分: "; // m の数だけ mstr に〇を連結する処理
+            for(var i = 0; i < m; i++) {
+                mstr+="〇"
+            }
+            $("#minuteStr").html(mstr);
+
+            var sstr = "秒: "; // s の数だけ mstr に〇を連結する処理
+            for(var i = 0; i < s; i++) {
+                sstr+="〇"
+            }
+            $("#secondStr").html(sstr);
+
+            $("#time").html("経過時間： " + time + "秒");
+            $("#remain").html("残り時間： " + m + "分" + s +"秒" );
+            analog(rest);
 
         }
         
         if (rest <= 0) {
             active = false;
             alarm();
+
         }
-
-
-
-        
     } 
-
-    
 
   </script>
 </head>
