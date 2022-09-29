@@ -188,6 +188,8 @@
     function btnAClick(e){
         active = true;
         startTime = new Date(); 
+        $("#btnA").prop("disabled", true);
+
         
         
     }
@@ -195,6 +197,8 @@
     // ButtonBがクリックされた時の処理
     function btnBClick(e){
         active = false;
+        $("#btnA").prop("disabled", false);
+
         
     }
 
@@ -217,12 +221,16 @@
             $("#time").html("経過時間： " + time);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+
+
         }
         
         if (rest <= 0) {
             active = false;
             alarm();
         }
+
+
 
         
     } 
