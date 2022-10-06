@@ -40,6 +40,7 @@
     }
     
     #btnA {
+        background-color: rgba(113, 121, 224, 0.705);
         font-size: 20px;
         position:absolute; top:380px; left:2%; width:43%; height:60px; 
     }
@@ -67,5 +68,9 @@
     input[type=number] {text-align: right;}
 
     body{
-        background-color: rgb(158, 229, 255);
+        background-color: rgba(158, 203, 255, 0.452);
+    }
+
+    button{
+        background-color: rgba(173, 177, 230, 0.705);
     }
