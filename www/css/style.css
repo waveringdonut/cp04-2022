@@ -75,5 +75,6 @@
     button{
         background-color: rgba(173, 177, 230, 0.705);
         font-family: Times;
+        border-radius: 20px;
     }
 
