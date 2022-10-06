@@ -32,6 +32,7 @@
         left:10px; right:10px;
         width: 50%;
         box-shadow:rgb(92, 124, 134) 5px 5px 5px;
+        margin:0 auto;
     }
     
     #mycanvas {
