@@ -43,6 +43,7 @@
         background-color: rgba(113, 121, 224, 0.705);
         font-size: 20px;
         position:absolute; top:380px; left:2%; width:43%; height:60px; 
+        
     }
     
     #btnB {
@@ -73,4 +74,6 @@
 
     button{
         background-color: rgba(173, 177, 230, 0.705);
+        font-family: Times;
     }
+
