@@ -34,6 +34,10 @@
         box-shadow:rgb(92, 124, 134) 5px 5px 5px;
         margin:0 auto;
     }
+
+    #time::after{
+        content: "秒";
+    }
     
     #mycanvas {
         color: rgb(255, 255, 255);
