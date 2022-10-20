@@ -225,7 +225,9 @@
             active = false;
             period = 60 * parseInt($("#minute").val()) + parseInt($("#second").val());
             $("#time").html("経過時間： 0");
-            $("#remain").html("残り時間： " + period);
+
+            $("#remain_2").html("残り時間： " + period + "秒");
+            $("#remain").html("残り時間： " + period + "秒");
 
         }
 
@@ -256,7 +258,19 @@
                 $("#secondStr").html(sstr);
 
                 $("#time").html("経過時間： " + time + "");
-                $("#remain").html("残り時間： " + m + "分" + s + "秒");
+                
+
+                
+
+                if(m === 0 && s < 10){
+                    $("#remain").html("");
+                    $("#remain_2").html("残り時間： " + m + "分" + s + "秒");
+                }else{
+                    $("#remain_2").html("");
+                    $("#remain").html("残り時間： " + m + "分" + s + "秒");
+                }
+                
+
                 analog(rest);
 
             } else {
@@ -278,13 +292,19 @@
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
 
+    
+    <div id="remain_2">Remaining time</div>
     <div id="remain">Remaining time</div>
+    
+
     <div id="time">Time</div>
+
     <button id="btnA">Start</button>
     <button id="btnB">Stop</button>
     <button id="btnC">Set</button>
     <input type="number" id="minute" value=0>
     <input type="number" id="second" value=15>
+
 </body>
 
 </html>
