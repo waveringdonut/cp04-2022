@@ -39,6 +39,10 @@
             $('#btnC').click(function(e) {
                 btnCClick(e);
             });
+
+            $('#btnR').click(function(e) {
+                btnRClick(e);
+            });
             init();
         });
 
@@ -164,6 +168,7 @@
             $('#btnA').prop('disabled', false);
             $('#btnB').prop('disabled', false);
             $('#btnC').prop('disabled', false);
+            $('#btnR').prop('disabled', false);
             btnCClick(null);
 
 
@@ -182,11 +187,7 @@
                 audio.src = "pin.wav";
                 audio.play();
 
-
-
-
             };
-
 
         }
 
@@ -231,12 +232,21 @@
 
         }
 
+        // ButtonRがクリックされた時の処理
+        function btnRClick(e) {
+            alarm();
+            active = false;
+            period = 180;
+            $("#time").html("経過時間： 0");
+
+            $("#remain_2").html("残り時間： " + period + "秒");
+            $("#remain").html("残り時間： " + period + "秒");
+
+        }
 
         // 繰り返し実行する処理
         function timer() {
             if (active) {
-
-
 
                 var time = parseInt((new Date() - startTime) / 1000) - sumWaitTime;
 
@@ -291,17 +301,17 @@
 
     <div id="minuteStr">〇</div>
     <div id="secondStr">〇</div>
-
     
     <div id="remain_2">Remaining time</div>
     <div id="remain">Remaining time</div>
-    
 
     <div id="time">Time</div>
 
     <button id="btnA">Start</button>
     <button id="btnB">Stop</button>
     <button id="btnC">Set</button>
+    <button id="btnR">RamenSet</button>
+
     <input type="number" id="minute" value=0>
     <input type="number" id="second" value=15>
 
